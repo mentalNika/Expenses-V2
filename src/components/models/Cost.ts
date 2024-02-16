@@ -1,8 +1,8 @@
 type Cost = {
   title: string;
-  sum: number;
+  sum: string;
   date: string;
-  id: number;
+  id: string;
 }
 
 export default Cost;
