@@ -22,7 +22,6 @@ const App: FC = () => {
 
   return (
     <div>
-      {/* <NewConsumption addCost={addCost} /> */}
       <NewCost addCost={addCost}/>
       <CostsList />
     </div>

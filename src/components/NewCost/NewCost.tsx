@@ -12,23 +12,25 @@ const initState = {
   id: "",
 };
 
-const NewCost: FC = ({ addCost }) => {
+const NewCost: FC<NewCostProps> = ({ addCost }) => {
   const [newCost, setNewCost] = useState<{
     title: string;
     sum: string;
     date: string;
-    id: string;
+    id: any;
   }>(initState);
 
   const costValueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, id } = e.target;
+    const { name, value } = e.target;
 
     setNewCost({
       ...newCost,
       [name]: value,
-      [id]: Math.random(),
+      id: Math.random(),
     });
   };
+
+  console.log(newCost);
 
   const submitCostHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -38,8 +40,11 @@ const NewCost: FC = ({ addCost }) => {
         title,
         sum,
         date,
-        id
-      })
+        id,
+      });
+    } else {
+      const errorMessage: string = "Заполните все поля!";
+      alert(errorMessage);
     }
   };
 
