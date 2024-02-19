@@ -61,14 +61,14 @@ const NewCost: FC<NewCostProps> = ({ addCost }) => {
         <input
           onChange={costValueHandler}
           name="sum"
-          type="text"
+          type="number"
           placeholder="Сумма"
           value={newCost.sum}
         />
         <input
           onChange={costValueHandler}
           name="date"
-          type="text"
+          type="date"
           placeholder="Дата"
           value={newCost.date}
         />
